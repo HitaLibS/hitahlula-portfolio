@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitahlula Liberty Shimbani — Personal Hub</title>
+    <!-- Pointing directly to our organized CSS folder -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Lucide Icons Production Engine (for UI buttons, not social icons) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Small styling touch to make your custom 3D image icons pop perfectly */
+        .social-icon-img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .social-node:hover .social-icon-img {
+            transform: scale(1.15) rotate(2deg);
+        }
+        /* Override default icon wrap padding/bg to make image look seamless */
+        .social-matrix-grid .social-icon-wrapper {
+            background: transparent !important;
+            width: auto;
+            height: auto;
+            margin-bottom: 8px;
+        }
+
+        /* ==========================================================================
+           INLINE ARTICLE SYSTEM STYLING (GOLD & ONYX INTENSITY)
+           ========================================================================= */
+        .inline-article-section {
+            margin-top: 4rem;
+            padding: 3rem 2.5rem;
+            background: #12161f;
+            border: 1px solid #2c3540;
+            border-radius: 24px;
+            color: #c5c6c7;
+            font-size: 16px;
+            line-height: 1.75;
+            scroll-margin-top: 2rem; /* Clean alignment on jump-scroll */
+        }
+
+        .inline-article-section h1 {
+            color: #ffffff;
+            font-size: 2.25rem;
+            line-height: 1.25;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .inline-article-section h2 {
+            color: #c5a059;
+            font-size: 1.45rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #2c3540;
+            padding-bottom: 0.5rem;
+            letter-spacing: -0.3px;
+        }
+
+        .inline-article-section h3 {
+            color: #ffffff;
+            font-size: 1.15rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .inline-article-section p {
+            margin-bottom: 1.5rem;
+        }
+
+        .inline-article-section hr {
+            border: 0;
+            height: 1px;
+            background: #2c3540;
+            margin: 2.5rem 0;
+        }
+
+        .inline-article-section ul, .inline-article-section ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .inline-article-section li {
+            margin-bottom: 0.65rem;
+        }
+
+        .inline-article-section blockquote {
+            background-color: rgba(197, 160, 89, 0.04);
+            border-left: 4px solid #c5a059;
+            padding: 1.25rem 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .inline-article-section blockquote p {
+            margin-bottom: 0;
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        /* Asset Links Card */
+        .article-assets-box {
+            background: #1f2833;
+            padding: 1.25rem;
+            border-radius: 12px;
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            margin-bottom: 2.5rem;
+        }
+
+        .article-assets-box ul {
+            list-style: none;
+            margin-left: 0;
+            margin-bottom: 0;
+        }
+
+        .article-assets-box li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .article-assets-box a {
+            color: #c5a059;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .article-assets-box a:hover {
+            text-decoration: underline;
+        }
+
+        /* Specification Matrix Table */
+        .article-spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .article-spec-table th, .article-spec-table td {
+            padding: 0.85rem 1.25rem;
+            text-align: left;
+            border-bottom: 1px solid #2c3540;
+        }
+
+        .article-spec-table th {
+            background-color: #1f2833;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .article-spec-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        @media (max-width: 768px) {
+            .inline-article-section { padding: 2rem 1.5rem; }
+            .inline-article-section h1 { font-size: 1.75rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- INTERACTIVE AMBIENT GLOW BACKDROP CONTAINER LAYER -->
+    <div class="ambient-glow-system">
+        <div class="glow-orb-1"></div>
+        <div id="cursor-glow"></div>
+        <div class="glow-orb-2"></div>
+    </div>
+
+    <div class="container">
+        
+        <!-- HEADER / NAVIGATION NODE -->
+        <header class="main-header glass-card">
+            <div class="logo">Hitalibs<span>.</span></div>
+            <div class="nav-actions">
+                <div class="status-badge">
+                    <div class="status-dot"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- HERO BRAND INTRO DISPLAY SECTION -->
+        <main class="hero-layout">
+            <div class="hero-content">
+                <div class="hero-tag glass-card">
+                    <i data-lucide="flame" style="width: 14px; height: 14px;"></i> Creative Director &amp; Developer
+                </div>
+                <h1>Hitahlula Liberty Shimbani</h1>
+                <p>Creating stories through <strong class="text-p">design</strong>, <strong class="text-s">music</strong>, <strong class="text-a">technology</strong> and <strong>culture</strong>.</p>
+                <div class="btn-group">
+                    <a href="#contact" class="btn btn-primary">
+                        Let's Work Together <i data-lucide="send" style="width: 16px; height: 16px;"></i>
+                    </a>
+                    <a href="#projects" class="btn btn-secondary">View Showcases</a>
+                </div>
+            </div>
+            
+            <!-- HERO IMAGE BLOCK -->
+            <div class="avatar-frame glass-card">
+                <div class="avatar-inner" style="background: transparent;">
+                    <img src="static/images/profile.jpg" alt="Hitahlula Liberty Shimbani" style="width: 100%; height: 100%; object-fit: cover; border-radius: 14px;">
+                </div>
+            </div>
+        </main>
+
+        <!-- SOCIAL DISCOVERY NETWORKS GRID SECTION -->
+        <section>
+            <div class="section-title-block">
+                <div class="section-tag">Central Hub Matrix</div>
+                <div class="section-main-title">Connect Across Channels</div>
+            </div>
+            <div class="social-matrix-grid">
+                
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/itzhitalibs0207?igsh=cXNqaDZtMW10bHNm" target="_blank" class="social-node glass-card">
+                    <div class="social-icon-wrapper">
+                        <img src="static/images/IG.png" alt="Instagram" class="social-icon-img">
+                    </div>
+                    <span>Instagram</span>
+                </a>
+
+                <!-- TikTok -->
+                <a href="#" target="_blank" class="social-node glass-card">
+                    <div class="social-icon-wrapper">
+                        <img src="static/images/tk.png" alt="TikTok" class="social-icon-img">
+                    </div>
+                    <span>TikTok</span>
+                </a>
+
+                <!-- Facebook -->
+                <a href="#" target="_blank" class="social-node glass-card">
+                    <div class="social-icon-wrapper">
+                        <img src="static/images/fb.png" alt="Facebook" class="social-icon-img">
+                    </div>
+                    <span>Facebook</span>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="#" target="_blank" class="social-node glass-card">
+                    <div class="social-icon-wrapper">
+                        <img src="static/images/LI.png" alt="LinkedIn" class="social-icon-img">
+                    </div>
+                    <span>LinkedIn</span>
+                </a>
+
+                <!-- WhatsApp -->
+                <a href="#" target="_blank" class="social-node glass-card">
+                    <div class="social-icon-wrapper">
+                        <img src="static/images/WA.png" alt="WhatsApp" class="social-icon-img">
+                    </div>
+                    <span>WhatsApp</span>
+                </a>
+
+                <!-- YouTube -->
+                <a href="#" target="_blank" class="social-node glass-card">
+                    <div class="social-icon-wrapper">
+                        <img src="static/images/YT.png" alt="YouTube" class="social-icon-img">
+                    </div>
+                    <span>YouTube</span>
+                </a>
+
+                <!-- Gmail/Email -->
+                <a href="mailto:liberty@shimbani.creative" class="social-node glass-card">
+                    <div class="social-icon-wrapper">
+                        <img src="static/images/GM.png" alt="Email" class="social-icon-img">
+                    </div>
+                    <span>Email</span>
+                </a>
+
+                <!-- Instagram Dynamic/Alternate -->
+                <a href="https://www.instagram.com/hitalibs?igsh=OXJqYTVzNzNianlq" target="_blank" class="social-node glass-card">
+                    <div class="social-icon-wrapper">
+                        <img src="static/images/IG.png" alt="Instagram" class="social-icon-img">
+                    </div>
+                    <span>Instagram</span>
+                </a>
+
+                <!-- PINTEREST -->
+                <a href="#" target="_blank" class="social-node glass-card">
+                    <div class="social-icon-wrapper">
+                        <img src="static/images/pin.png" alt="Pinterest" class="social-icon-img">
+                    </div>
+                    <span>Pinterest</span>
+                </a>
+
+                <!-- Spotify -->
+                <a href="#" target="_blank" class="social-node glass-card">
+                    <div class="social-icon-wrapper">
+                        <img src="static/images/sp.png" alt="Spotify" class="social-icon-img" onerror="this.src='https://unpkg.com/lucide-static@latest/icons/music.svg'">
+                    </div>
+                    <span>Spotify</span>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- FEATURED INTERACTIVE PORTFOLIO PROJECT ARCHITECTURE SHOWCASE SECTION -->
+        <section id="projects">
+            <div class="section-title-block">
+                <div class="section-tag">Creative Output</div>
+                <div class="section-main-title">Featured Production Showcases</div>
+            </div>
+            <div class="projects-grid">
+                
+                <!-- LINKED INTERACTIVE CARD -->
+                <div class="project-card glass-card" id="xigaza-card" style="cursor: pointer;">
+                    <div>
+                        <div class="project-meta">
+                            <div class="project-icon"><i data-lucide="layers"></i></div>
+                            <div class="project-year">2026</div>
+                        </div>
+                        <h3>Xigaza Digital Archive</h3>
+                        <p>A premium interactive web architecture and repository focused on preserving, cataloging, and celebrating cultural metadata through elegant layouts and fast delivery components. <br><strong style="color: #c5a059; display: inline-flex; align-items: center; gap: 4px; font-size: 13px; margin-top: 6px;">Read Full Case Study ↓</strong></p>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">HTML5/CSS3</span>
+                        <span class="tag">Data Preservation</span>
+                        <span class="tag">Cultural Architecture</span>
+                    </div>
+                </div>
+
+                <!-- INTEGRATED SUSTAINABLE ENGINEERING ARCHITECTURE CARD -->
+                <div class="project-card glass-card">
+                    <div>
+                        <div class="project-meta">
+                            <div class="project-icon"><i data-lucide="zap"></i></div>
+                            <div class="project-year">2025</div>
+                        </div>
+                        <h3>Zimbabwe Science Fair Participant</h3>
+                        <p>An innovative embedded hardware architecture that harvests mechanical vibrations from vehicular traffic using PZT piezoelectric transducers[cite: 2], optimizing energy storage and regulation via an automated Arduino telemetry system[cite: 2].</p>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">Arduino &amp; C++</span>
+                        <span class="tag">Sustainable Engineering</span>
+                        <span class="tag">Embedded Systems</span>
+                    </div>
+                </div>
+                
+                <!-- PLASTIC WASTE TO PETROLEUM JELLY CONVERSION RESEARCH CARD -->
+                <div class="project-card glass-card">
+                    <div>
+                        <div class="project-meta">
+                            <div class="project-icon"><i data-lucide="flask"></i></div>
+                            <div class="project-year">2026</div>
+                        </div>
+                        <h3>Plastic Waste Valorization Research</h3>
+                        <p>An environmental engineering study evaluating the conversion of urban PVC and polystyrene plastic waste into commercial-grade synthetic petroleum jelly via catalytic pyrolysis, identifying an optimal yield of 85 wt% utilizing a custom Silica catalyst sequence at 300°C[cite: 3].</p>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">Catalytic Pyrolysis</span>
+                        <span class="tag">Chemical Recycling</span>
+                        <span class="tag">Resource Recovery</span>
+                    </div>
+                </div>
+                
+                <!-- TEXPO HACKATHON CHAMPION CARD -->
+                <div class="project-card glass-card">
+                    <div>
+                        <div class="project-meta">
+                            <div class="project-icon"><i data-lucide="award"></i></div>
+                            <div class="project-year">2024</div>
+                        </div>
+                        <h3>TeXpo '24 Hackathon Champion</h3>
+                        <p>Won 1st Place with team 'Code Crusaders' from USAP Community School, designing an IoT vehicle safety prototype to prevent hot car deaths. Integrated CO₂, CO, temperature, and motion sensors with automated cooling systems and real-time SMS telemetry alerts.</p>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">IoT Prototyping</span>
+                        <span class="tag">Embedded Systems</span>
+                        <span class="tag">Sensor Fusion</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DISCIPLINARY MATRICES SKILLS LIST SECTION -->
+        <section>
+            <div class="section-title-block">
+                <div class="section-tag">Core Tech &amp; Artistry</div>
+                <div class="section-main-title">Cross-Disciplinary Skillsets</div>
+            </div>
+            <div class="skills-flex">
+                <div class="skill-token glass-card"><i data-lucide="check-circle"></i> UI/UX Architecture Design</div>
+                <div class="skill-token glass-card"><i data-lucide="check-circle"></i> Graphic Design Systems</div>
+                <div class="skill-token glass-card"><i data-lucide="check-circle"></i> Videography Production &amp; Grade</div>
+                <div class="skill-token glass-card"><i data-lucide="check-circle"></i> Photography Synthesis</div>
+                <div class="skill-token glass-card"><i data-lucide="check-circle"></i> Music Production &amp; Mix</div>
+                <div class="skill-token glass-card"><i data-lucide="check-circle"></i> Drama and Theatre</div>
+                <div class="skill-token glass-card"><i data-lucide="check-circle"></i> Poetry </div>
+                <div class="skill-token glass-card"><i data-lucide="check-circle"></i> Microsoft Office</div>
+                <div class="skill-token glass-card"><i data-lucide="check-circle"></i> Beat Making</div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+           MAIN WEBSITE INLINE EMBEDDED CASE STUDY ARTICLE
+           ========================================================================= -->
+        <section class="inline-article-section" id="xigaza-case-study">
+            <h1>From Paper to Platform: Building a Living Digital Archive for vaTsonga Heritage</h1>
+
+            <div class="article-assets-box">
+                <h3>🔗 Project Assets</h3>
+                <ul>
+                    <li>🌐 <a href="#" target="_blank">View Live Platform Production</a></li>
+                    <li>📄 <a href="static/documents/Tikronika_taXigaza.pdf" target="_blank">Download Field Research Paper PDF (<em>Tikronika taXigaza</em>)</a></li>
+                </ul>
+            </div>
+
+            <p>When we look at the decline of indigenous languages globally, we often view it as an academic problem. But for the vaTsonga (Shangani) people of Chiredzi, Zimbabwe, language erosion is a live cultural emergency. As the younger generation increasingly shifts toward Shona and English, an entire repository of unwritten history, ancestral music, and oral wisdom faces a massive generational succession gap.</p>  
+
+            <p>My journey to solve this didn’t start with software architecture; it began with rigorous empirical fieldwork. This portfolio article outlines the entire trajectory of the <strong>Xigaza Daily</strong> ecosystem—spanning from its origin as a mixed-methods research paper to its current state as a fully deployed, community-owned mobile platform.</p>
+
+            <hr>
+
+            <h2>Phase 1: The Academic Foundation & Empirical Evidence</h2>
+            <p>The blueprint for this project was established in my comprehensive research paper, <em>“Tikronika taXigaza (The Chronicles Of Xigaza): Preserving The Xangani Language And Oral Traditions In Chiredzi,”</em> conducted under the auspices of the USAP Community School[cite: 1].</p>  
+            <p>To move beyond vague assumptions, I deployed a mixed-methods research methodology combining qualitative interviews with community elders, linguistic experts, and local youth, alongside a quantitative community survey[cite: 1]. The empirical data uncovered a stark, undeniable generational divide:</p>  
+            <ul>
+                <li><strong>The Fluency Drop:</strong> Language proficiency data revealed that while elder generations maintained rich vocabulary[cite: 1], fluent Xangani usage dropped significantly to <strong>27.6%</strong> for the 25–34 age demographic[cite: 1], and plummeted to just <strong>10.3%</strong> among youth aged 15–24[cite: 1].</li>  
+                <li><strong>The Structural Barriers:</strong> <strong>70%</strong> of respondents identified the dominance of English and Shona in formal education, media, and employment as the primary driver of language decline[cite: 1]. This was compounded by a severe deficit of localized educational resources and media platforms[cite: 1].</li>  
+                <li><strong>The Opportunity:</strong> Crucially, <strong>71.4%</strong> of the community expressed deep awareness of this linguistic erosion[cite: 1], <strong>95%</strong> agreed that preserving oral traditions was vital[cite: 1], and an overwhelming <strong>99%</strong> expressed absolute willingness to participate in revitalization efforts[cite: 1].</li>  
+            </ul>
+            <p>The paper concluded that traditional static preservation was insufficient; safeguarding the culture required a strategic, community-driven digital platform combining interactive learning tools with a decentralized archive[cite: 1].</p>  
+
+            <h2>Phase 2: Navigating Protocols and Engineering the Database</h2>
+            <p>Taking the theoretical solution proposed in <em>Tikronika taXigaza</em>, I transitioned into the execution phase as the year turned to 2026.</p>  
+            <p>I spent the opening months executing strict cultural protocols, securing the formal endorsements of four major traditional authorities: <strong>Chiefs Gezani, Mpapa, Chilonga, and Sengwe</strong>. This institutional backing opened the doors to uncompromised oral history collection. I conducted intensive field sessions with elders, preserving ancestral stories (<em>karingano</em>), traditional songs (<em>tinsimu</em>), and complex proverbs (<em>swivuriso</em>).</p>  
+            <p>On the architectural front, the research dictated the technical constraints. Because the target youth demographic relied heavily on entry-level smartphones operating on expensive, low-bandwidth cellular networks, a heavy cloud-hosted app was out of the question.</p>
+            <blockquote>
+                <p>Engineering Solution: I bypassed expensive database dependencies and engineered a mobile-first, offline-ready architecture running on a flat-file database (xangani_archive.csv). This lightweight approach ensures that the database requires zero maintenance costs and can be updated by anyone capable of filling out a standard spreadsheet.</p>
+            </blockquote>
+
+            <h2>Phase 3: Interface Synthesis & Infrastructure Tuning</h2>
+            <p>To engage a generation that frequently code-switches, the application interface had to feel premium and contemporary. I engineered six responsive mobile viewports utilizing a high-contrast <strong>"Gold and Onyx" dark-mode aesthetic</strong>, designed to instantly elevate the perceived cultural value of the archive for younger users.</p>  
+            <p>Based on the cultural domains identified during field research, I organized the repository into six clear quadrants to capture the full spectrum of intangible heritage:</p>
+            <ol>
+                <li>History & Background (Contextual lineage)</li>
+                <li>Xigaza of Old (Ancestral music tracking and rhythms)</li>
+                <li>Xigaza xama 2K (Modern youth sub-genres and fusions)</li>
+                <li>Folktales (<em>Karingano</em> digital storybook)</li>  
+                <li>Proverbs (<em>Swivuriso</em> and deep idioms)</li>  
+                <li>Attires & Learning (Visual and orthographic guides)</li>
+            </ol>
+            <p>To combat network latency, I built a custom media compression pipeline, aggressively shrinking high-fidelity audio assets of traditional music without compromising clarity. Furthermore, I implemented client-side caching so text data, idioms, and historical frameworks load instantaneously even during localized cellular blackouts.</p>
+
+            <h2>Phase 4: Where We Are Now—The Autonomous Human Pipeline</h2>
+            <p>A digital archive is only as sustainable as the human pipeline behind it. My ultimate objective was to ensure the ecosystem could run indefinitely without needing an external software developer or a recurring budget.</p>
+            <p>To achieve this, the platform features an intuitive interface where authorized users can select a secure <strong>"Creator Role."</strong> By clicking a built-in <strong>Plus (+)</strong> button, trained local youth can independently upload new oral recordings, type out ancestral proverbs, and tag metadata directly from their mobile devices.</p>
+            <p>We are currently executing the final <strong>"Shadowing Phase"</strong> before the formal handover. Local youth pioneers are running independent content-injection trials under my supervision to cement operational confidence. Simultaneously, the core system is undergoing staging server stress tests as our long-term institutional partner, the <strong>Lowveld Media Trust (LMT)</strong>, takes over administrative moderation using simple, built-in visibility toggles.</p>
+
+            <h2>The Ultimate Impact</h2>
+            <p>What began as an academic research paper analyzing cultural erosion has materialized into a live, self-sustaining digital engine. By combining a sophisticated mobile front-end with a zero-cost backend, <strong>Xigaza Daily</strong> has bridged a profound generational divide. We have handed the tool of cultural continuity directly back to the vaTsonga youth, ensuring their language, history, and rhythm remain vibrant components of the digital present.</p>  
+
+            <hr>
+
+            <h2>🛠️ Portfolio Specifications</h2>
+            <table class="article-spec-table">
+                <thead>
+                    <tr>
+                        <th>Attribute</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Role</strong></td>
+                        <td>Lead Systems Engineer, Academic Researcher & Cultural Curator</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Timeline</strong></td>
+                        <td>Academic Research Stage up to Platform Handover (July 2026)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Core Research</strong></td>
+                        <td><em>Tikronika taXigaza: Preserving The Xangani Language And Oral Traditions In Chiredzi</em>[cite: 1]</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tech Stack</strong></td>
+                        <td>Mobile UI Frameworks, Flat-File Databases (.csv), Staging Environments, Audio Compression Pipelines</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Key Partners</strong></td>
+                        <td>Lowveld Media Trust (LMT), Chiredzi District Traditional Leadership Councils</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- EXTRA UTILITY METRICS DISPLAY ROW CONTAINER SECTION -->
+        <section class="metrics-row">
+            <div class="metric-widget glass-card">
+                <div class="metric-icon-wrap" style="background: rgba(29, 185, 84, 0.1); color: #1DB954;">
+                    <i data-lucide="music" class="pulse-green-anim"></i>
+                </div>
+                <div class="metric-text-wrap">
+                    <div class="title">Spotify Engine</div>
+                    <div class="value">Offline — Studio Mode</div>
+                </div>
+            </div>
+            <div class="metric-widget glass-card">
+                <div class="metric-icon-wrap" style="background: rgba(0, 217, 255, 0.1); color: var(--accent-color);">
+                    <i data-lucide="code"></i>
+                </div>
+                <div class="metric-text-wrap">
+                    <div class="title">Global Visits</div>
+                    <div class="value">14,842 verified</div>
+                </div>
+            </div>
+            <div class="metric-widget glass-card">
+                <div class="metric-icon-wrap" style="background: rgba(255, 77, 141, 0.1); color: var(--secondary-color);">
+                    <i data-lucide="award"></i>
+                </div>
+                <div class="metric-text-wrap">
+                    <div class="title">Repository Node</div>
+                    <div class="value">Verified Contributor</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECURE SYSTEM CONTACT MESSAGING PORTAL FORM SECTION -->
+        <section id="contact" class="contact-grid">
+            <div class="contact-details">
+                <div class="section-tag">Direct Communications</div>
+                <div class="section-main-title" style="font-size: 2rem; line-height: 1.2;">Let's Construct Next-Gen Products Together</div>
+                <p>Have an enterprise architecture, unique brand concept, or artistic project waiting to launch? Drop a secure system transmission here.</p>
+                <div class="contact-methods">
+                    <div class="method-item"><i data-lucide="mail"></i> liberty@shimbani.creative</div>
+                    <div class="method-item"><i data-lucide="phone"></i> Secure Line Available via Web Message</div>
+                </div>
+            </div>
+            
+            <form id="contact-form" class="contact-form glass-card">
+                <input type="hidden" name="access_key" value="90935b9f-0126-4da6-823b-ad067a93210c">
+                <input type="hidden" name="subject" value="New message from Hitahlula Portfolio site">
+                <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
+                <div class="form-row-dual">
+                    <div class="form-group">
+                        <label>Identification / Name</label>
+                        <input type="text" name="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Return Node / Email</label>
+                        <input type="email" name="email" placeholder="john@domain.com" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-group">
+                        <label>Transmission Context / Message</label>
+                        <textarea name="message" rows="4" placeholder="Describe the structural objective or scope..." required></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-submit">Submit Message Layer</button>
+                <p id="contact-form-status" style="margin-top: 1rem; font-size: 14px;"></p>
+            </form>
+        </section>
+
+        <!-- ARCHITECTURAL REPOSITORY FOOTER MODULE -->
+        <footer class="main-footer">
+            <p>&copy; <span id="current-year"></span> Liberty Shimbani. Powered by Semantic HTML5 &amp; CSS3 Variables.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Framework</a>
+                <a href="#">System Integrity</a>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Pointing directly to our organized JS folder -->
+    <script src="js/main.js"></script>
+
+    <!-- CARD-TO-ARTICLE INTERACTION ROUTER SCRIPT -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const projectCard = document.getElementById("xigaza-card");
+            const targetArticle = document.getElementById("xigaza-case-study");
+
+            if (projectCard && targetArticle) {
+                projectCard.addEventListener("click", () => {
+                    targetArticle.scrollIntoView({ 
+                        behavior: "smooth", 
+                        block: "start" 
+                    });
+                });
+            }
+        });
+    </script>
+
+    <!-- CONTACT FORM SUBMISSION HANDLER (Web3Forms) -->
+    <script>
+        const contactForm = document.getElementById('contact-form');
+        const contactStatus = document.getElementById('contact-form-status');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', async (event) => {
+                event.preventDefault();
+
+                const submitBtn = contactForm.querySelector('button[type="submit"]');
+                const originalBtnText = submitBtn.textContent;
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending...';
+                contactStatus.textContent = '';
+                contactStatus.style.color = '';
+
+                const formData = new FormData(contactForm);
+                const object = Object.fromEntries(formData);
+                const json = JSON.stringify(object);
+
+                try {
+                    const response = await fetch('https://api.web3forms.com/submit', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: json
+                    });
+                    const result = await response.json();
+
+                    if (result.success) {
+                        contactStatus.style.color = '#4ade80';
+                        contactStatus.textContent = "Message sent — thanks! I'll get back to you soon.";
+                        contactForm.reset();
+                    } else {
+                        contactStatus.style.color = '#f87171';
+                        contactStatus.textContent = result.message || 'Something went wrong. Please try again.';
+                    }
+                } catch (error) {
+                    contactStatus.style.color = '#f87171';
+                    contactStatus.textContent = 'Network error — please try again in a moment.';
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalBtnText;
+                }
+            });
+        }
+    </script>
+</body>
+</html>
